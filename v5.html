@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5:số tháng cho vay và lãi xuất hàng tháng.</title>
+</head>
+<body>
+<script>
+    let b = parseInt(prompt("thời gian vay"))
+    let a = parseInt(prompt("số tiền  vay"))
+    let n = parseInt(prompt("lãi hàng tháng vay"))
+    let lai = a*n/100;
+    let tong=0;
+
+   for (let u=0;u<b;u++){
+       tong=a+lai;
+       lai+=tong*n/100;
+   }
+   alert(tong)
+</script>
+</body>
+</html>
