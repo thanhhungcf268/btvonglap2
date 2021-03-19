@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4: In hình chữ nhật</title>
+</head>
+<body><h2>Add New Product</h2>
+<table>
+    <tr>
+        <input type="text" id="duel" value="" name="faa" >
+        <button onclick="Add()"/>Add
+    </tr>
+</table>
+<h2>Display All Product</h2>
+<br>
+<h5>Product Name</h5><h6></h6>
+<form id="form"></form>
+
+
+</body>
+</html>
+<script>
+    let array = [];
+    function form() {
+        let sout = "<table border='1' width='600' cellspacing='0' cellpadding='3'>"
+
+        for(let i=0;i<array.length;i++){
+            sout += "<tr>"
+            sout += "<td>" +array[i]+"</td>"
+            sout += "<td><button type='button' onclick='Edit("+i+")' >Edit</button></td>"
+            sout += "<td><button type='button' onclick='Delete("+i+")'>Delete</button></td>"
+            sout += "</tr>"
+
+        }
+        sout += "</table>";
+        document.getElementById("form").innerHTML = sout;
+    }
+    function isEmpty(str) {
+        return (!str && 0 === str.length);
+    }
+    function Add() {
+        let l = document.getElementById("duel").value;
+        let k = isEmpty(l)
+        console.log(k)
+        if(k === false){
+            array.push(l);
+            form()}
+    }
+    function Edit(i) {
+        let a = prompt(" ");
+        array[i] = a;
+        form();
+    }
+    function Delete(i) {
+        array.splice(i,1);
+        form();
+    }
+</script>
